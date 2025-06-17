@@ -1,0 +1,18 @@
+---
+strategy: polling
+no_screen_padding: 'no'
+dark_mode: 'no'
+static_data: ''
+polling_verb: get
+polling_url: https://www.wienerlinien.at/ogd_realtime/monitor?stopId={{wl_station}}
+polling_headers: ''
+id: 98534
+custom_fields:
+- keyname: wl_station
+  field_type: string
+  name: WL Station ID
+  description: Station ID
+  placeholder: 4111
+  help_text: Get your station ID here https://till.mabe.at/rbl
+name: Vienna Metro Departures
+refresh_interval: 15

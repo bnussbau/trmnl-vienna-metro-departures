@@ -1,0 +1,46 @@
+<div class="layout" layout--top>
+  <div class="stretch-y">
+    <table class="table">
+      <thead>
+        <tr>
+          <th><span class="title">Plan</span></th>
+          <th><span class="title">Aktuell</span></th>
+          <th><span class="title">Linie</span></th>
+          <th><span class="title">Richtung</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% assign station_name = {{data.monitors[0].locationStop.properties.title}} %}
+        {% assign line = data.monitors[0].lines[0] %}
+        {% assign departures = line.departures.departure %}
+
+        {% for departure in departures %}
+        <tr>
+          <td>
+            {% if departure.departureTime.timeReal == null %}
+            <span class="label">{{ departure.departureTime.timePlanned | date: "%H:%M" }}</span>
+            {% else %}
+            <span class="label"></span>
+            {% endif %}
+          </td>
+          <td>
+            {% if departure.departureTime.timeReal != blank and departure.departureTime.timeReal != "Invalid Date" %}
+            <span class="label">{{ departure.departureTime.timeReal | date: "%H:%M" }}</span>
+            {% else %}
+            <span class="label"></span>
+            {% endif %}
+          </td>
+          <td><span class="label">{{ line.name }}</span></td>
+          <td><span class="label">{{ line.towards }}</span></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="title_bar">
+  <img class="image" src="https://img.icons8.com/train"/>
+  <span class="title">{{ station_name }} | Richtung: {{ line.towards }}</span>
+  <span class="instance">Aktualisiert: {{ "now" | date: '%s' | plus: trmnl.user.utc_offset | date: "%Y-%m-%d %H:%M" }}</span>
+</div>

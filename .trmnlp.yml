@@ -1,0 +1,18 @@
+---
+# auto-reload when files change (`watch: false` to disable)
+watch:
+  - src
+  - .trmnlp.yml
+
+# values of custom fields (defined in src/settings.yml)
+custom_fields:
+  wl_station: 4111
+
+# override variables
+variables:
+  trmnl:
+    user:
+      utc_offset: 7200
+      locale: en
+      time_zone: Vienna
+      time_zone_iana: Europe/Vienna
