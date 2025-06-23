@@ -1,6 +1,5 @@
 <div class="layout" layout--top>
   <div class="stretch-y">
-
     <table class="table  table--condensed ">
       <thead>
         <tr>
@@ -8,6 +7,8 @@
           <th><span class="title">Aktuell</span></th>
           <th><span class="title">Linie</span></th>
           <th><span class="title">Richtung</span></th>
+          <th><span class="title">Gleis</span></th>
+          <th><span class="title"></span></th>
         </tr>
       </thead>
       <tbody>
@@ -33,6 +34,8 @@
           </td>
           <td><span class="label">{{ line.name }}</span></td>
           <td><span class="label">{{ line.towards }}</span></td>
+          <td><span class="label">{{ line.platform }}</span></td>
+          <td><span class="label"> {% if line.barrierFree == true %} &#9855;{% endif %}</span></td>
         </tr>
         {% endfor %}
       </tbody>
@@ -41,7 +44,7 @@
 </div>
 
 <div class="title_bar">
-  <img class="image" src="https://img.icons8.com/train"/>
-  <span class="title">{{ station_name }} | Richtung: {{ line.towards }}</span>
+  <img class="image image-stroke" src="https://img.icons8.com/train"/>
+  <span class="title">{{ station_name }}</span>
   <span class="instance">Aktualisiert: {{ "now" | date: '%s' | plus: trmnl.user.utc_offset | date: "%Y-%m-%d %H:%M" }}</span>
 </div>
