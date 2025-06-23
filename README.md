@@ -1,6 +1,6 @@
 ## Vienna Metro Departures for TRMNL
 
-<img width="939" alt="image" src="https://github.com/user-attachments/assets/3f14b391-315b-42ac-81c5-4c2a2227ebfb" />
+![image](https://github.com/user-attachments/assets/cd81f95c-76f4-4886-821c-017b65ca7be8)
 
 
 ### Development
