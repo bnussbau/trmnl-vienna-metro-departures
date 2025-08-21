@@ -11,7 +11,7 @@
         </tr>
       </thead>
       <tbody>
-        {% assign station_name = {{data.monitors[0].locationStop.properties.title}} %}
+        {% assign station_name = data.monitors[0].locationStop.properties.title %}
         {% assign line = data.monitors[0].lines[0] %}
         {% assign departures = line.departures.departure %}
 
