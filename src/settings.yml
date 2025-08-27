@@ -8,6 +8,11 @@ polling_url: https://www.wienerlinien.at/ogd_realtime/monitor?stopId={{wl_statio
 polling_headers: ''
 id: 98534
 custom_fields:
+- keyname: author_info
+  name: About This Plugin
+  description: Metro departures for Vienna, Austria. Data attribution data.gv.at
+  field_type: author_bio
+  github_url: https://github.com/bnussbau/trmnl-vienna-metro-departures
 - keyname: wl_station
   field_type: string
   name: WL Station ID
